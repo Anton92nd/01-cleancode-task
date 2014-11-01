@@ -36,7 +36,6 @@
 
         private bool CheckForWhite()
         {
-            bool isCheck = false;
             foreach (Loc loc in _board.Figures(Cell.Black))
             {
                 var cell = _board.Get(loc);
@@ -44,10 +43,10 @@
                 foreach (Loc to in moves)
                 {
                     if (_board.Get(to).IsWhiteKing)
-                        isCheck = true;
+                        return true;
                 }
             }
-            return isCheck;
+            return false;
         }
     }
 }
